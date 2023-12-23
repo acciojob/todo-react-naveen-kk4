@@ -14,9 +14,9 @@ const App = () => {
         setTodo("");
         
     }
-    function handleDelete(e){
+    function handleDelete(keyName){
      
-      delete list[e.target.id]; 
+      delete list[keyName]; 
       setList({...list});
     }
   return (
@@ -31,7 +31,7 @@ const App = () => {
               Object.keys(list).map((keyName) => (
                 <li>
                     <span>{list[keyName]}</span>
-                    <button id={keyName} type="delete" onClick={handleDelete}>Delete</button>
+                    <button  type="delete" onClick={()=>handleDelete(keyName)}>Delete</button>
                 </li>
             ))
         }
